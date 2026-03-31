@@ -10,10 +10,8 @@ class Person:
 def create_person_list(people_data: list) -> list:
     Person.people.clear()
 
-    instances = []
-    for data in people_data:
-        person = Person(data.get("name"), data.get("age"))
-        instances.append(person)
+    instances = [Person(data.get("name"),
+                        data.get("age")) for data in people_data]
 
     for data in people_data:
         name = data.get("name")
